@@ -1,0 +1,22 @@
+<% include ../head %>
+<% include ../partials/navigation %>
+    <div class="container">
+        <% if(data.error.length > 0){ %>
+            <% for(var i=0; i < data.error.length; i++){ %>
+                <div class="alert alert-danger"><%= data.error[i].text %></div>
+        <% } }else { %>
+        <% } %>
+        <div class="card card-body">
+                <h3>jot down your ideas</h3>
+                <form action="/ideas" method="post">
+                    <div class="form-group">
+                        <input type="text" placeholder="Add your Idea title" class="form-control" name="title">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="" cols="30" rows="5" name="description"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+    </div>
+<% include ../footer %>  
